@@ -5,21 +5,24 @@
         <HBox>
             <VBox width='20em'>
                 <Label text='Currency Code'/>
-                <ComboBox width='100%'>
-                    <core:ListItem ></core:ListItem>
+                <ComboBox id="idCombo" items="{Currcode>/}" width='100%'>
+                    <core:ListItem key='{Currcode>curr}' text='{Currcode>curr}'></core:ListItem>
                 </ComboBox>
                 <Label text='Carrier Name'/>
-                <Input width='100%'/>
-                <Button text='Search' type="Emphasized" width='100%'></Button>
+                <Input id="idInput" width='100%'/>
+                <Button id="idButton" text='Search' type="Emphasized" width='100%' press='onSearch'></Button>
             </VBox>
             <VBox width="100%">
                 <Title text="Carrier List" level="H2" class="sapUiSmallMarginEnd"/>
-                <Table id="idMembersTable"
+                <Table id="idTable"
                 fixedLayout="false"
                 sticky="HeaderToolbar,ColumnHeaders"
                 mode="SingleSelectMaster"
                 inset="false"
-                items="{/carrierSet}"
+                items="{
+                    path:'/carrierSet',
+                    parameters: {'expand':'to_Item'}
+                }"
                 class="sapFDynamicPageAlignContent"
                 width="100%">
                 <headerToolbar>
@@ -48,14 +51,24 @@
                         width="auto">
                         <Text text="Url" />
                     </Column>
+                    <Column
+                        width="auto">
+                        <Text text="Length" />
+                    </Column>
+                    <Column
+                        width="auto">
+                        <Text text="Detail" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Text text="{Carrid}}" />
+                            <Text text="{Carrid}" />
                             <Text text="{Carrname}" />
-                            <Text text="{Currcode}}" />
-                            <Text text="{Url}}" />
+                            <Text text="{Currcode}" />
+                            <Text text="{Url}" />
+                            <Text text="{= ${to_Item}.length}" />
+                            <Button text="예약 현황" enabled="{= ${to_Item}.length > 0 ? true : false}" press="onPress"/>
                         </cells>
                     </ColumnListItem>
                 </items>
