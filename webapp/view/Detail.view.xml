@@ -1,0 +1,73 @@
+<mvc:View xmlns:navpopover="sap.ui.comp.navpopover" xmlns:core="sap.ui.core" controllerName="exam.exprogramb17.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:t="sap.ui.table"
+    xmlns="sap.m">
+    <Page id="page" title="항공편 예약 상세" showNavButton="true" navButtonPress="onNavMain">
+            <VBox width="100%">
+                <t:Table
+                id = "table"
+                rows="{fly>/}"
+                visibleRowCount='50'
+                visibleRowCountMode='Interactive'
+                selectionMode="None"
+                paste="onPaste"
+                ariaLabelledBy="title">
+                <t:extension>
+                    <OverflowToolbar style="Clear">
+                        <Title id="title" text="Flight List" />
+                    </OverflowToolbar>
+                </t:extension>
+                <t:columns>
+                    <t:Column>
+                        <Label text="CARRID" />
+                        <t:template>
+                            <Text text="{fly>CARRID}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="CONNID" />
+                        <t:template>
+                            <Text text="{fly>CONNID}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="FLDATE" />
+                        <t:template>
+                            <Text text="{fly>FLDATE}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="PRICE" />
+                        <t:template>
+                            <Text text="{fly>PRICE}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="CURRENCY" />
+                        <t:template>
+                            <Text text="{fly>CURRENCY}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="PLANETYPE" />
+                        <t:template>
+                            <Text text="{fly>PLANETYPE}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="SEATSMAX" />
+                        <t:template>
+                            <Text text="{fly>SEATSMAX}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column>
+                        <Label text="SEATSOCC" />
+                        <t:template>
+                            <Text text="{fly>SEATSOCC}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                </t:columns>
+            </t:Table>
+            </VBox>
+    </Page>
+</mvc:View>

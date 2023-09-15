@@ -99,6 +99,13 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "RouteDetail",
+          "pattern": "to_Flight/{paramId}",
+          "target": [
+            "TargetDetail"
+          ]
         }
       ],
       "targets": {
@@ -108,6 +115,13 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
+        },
+        "TargetDetail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Detail",
+          "viewName": "Detail"
         }
       }
     },

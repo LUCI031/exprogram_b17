@@ -12,8 +12,9 @@
                 <Input id="idInput" width='100%'/>
                 <Button id="idButton" text='Search' type="Emphasized" width='100%' press='onSearch'></Button>
             </VBox>
+            
             <VBox width="100%">
-                <Title text="Carrier List" level="H2" class="sapUiSmallMarginEnd"/>
+                
                 <Table id="idTable"
                 fixedLayout="false"
                 sticky="HeaderToolbar,ColumnHeaders"
@@ -26,13 +27,11 @@
                 class="sapFDynamicPageAlignContent"
                 width="100%">
                 <headerToolbar>
-                    <!-- <OverflowToolbar>
-                        <content>
-                        </content>
-                    </OverflowToolbar> -->
-                    <!-- <Toolbar> -->
-                        <!-- <Title text="Carrier List" level="H2"/> -->
-                    <!-- </Toolbar> -->
+                    <Toolbar>
+                        <Title text="Carrier List" level="H2" class="sapUiSmallMarginEnd"/>
+                        <ToolbarSpacer />
+                        <Button text='항공편 예약 상세' press="onNavFlight" />
+                    </Toolbar>
                 </headerToolbar>
                 <columns>
                     <Column
