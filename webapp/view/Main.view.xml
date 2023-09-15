@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="exam.exprogramb17.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <HBox>
+            <VBox width='20em'>
+                <Label text='Currency Code'/>
+                <ComboBox width='100%'>
+                    <core:ListItem ></core:ListItem>
+                </ComboBox>
+                <Label text='Carrier Name'/>
+                <Input width='100%'/>
+                <Button text='Search' type="Emphasized" width='100%'></Button>
+            </VBox>
+            <VBox width="100%">
+                <Title text="Carrier List" level="H2" class="sapUiSmallMarginEnd"/>
+                <Table id="idMembersTable"
+                fixedLayout="false"
+                sticky="HeaderToolbar,ColumnHeaders"
+                mode="SingleSelectMaster"
+                inset="false"
+                items="{/carrierSet}"
+                class="sapFDynamicPageAlignContent"
+                width="100%">
+                <headerToolbar>
+                    <!-- <OverflowToolbar>
+                        <content>
+                        </content>
+                    </OverflowToolbar> -->
+                    <!-- <Toolbar> -->
+                        <!-- <Title text="Carrier List" level="H2"/> -->
+                    <!-- </Toolbar> -->
+                </headerToolbar>
+                <columns>
+                    <Column
+                        width="auto">
+                        <Text text="Carrid" />
+                    </Column>
+                    <Column
+                        width="auto">
+                        <Text text="Carrname" />
+                    </Column>
+                    <Column
+                        width="auto">
+                        <Text text="Currcode" />
+                    </Column>
+                    <Column
+                        width="auto">
+                        <Text text="Url" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Carrid}}" />
+                            <Text text="{Carrname}" />
+                            <Text text="{Currcode}}" />
+                            <Text text="{Url}}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </VBox>
+        </HBox>
+    </Page>
+</mvc:View>
