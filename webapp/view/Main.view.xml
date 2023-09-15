@@ -16,7 +16,7 @@
             <VBox width="100%">
                 
                 <Table id="idTable"
-                fixedLayout="false"
+                fixedLayout="true"
                 sticky="HeaderToolbar,ColumnHeaders"
                 mode="SingleSelectMaster"
                 inset="false"

@@ -33,7 +33,10 @@
                     <t:Column>
                         <Label text="FLDATE" />
                         <t:template>
-                            <Text text="{fly>FLDATE}" wrapping="false" />
+                            <Text text="{
+                                path: 'fly>FLDATE',
+                                type: 'sap.ui.model.type.Date',
+                                formatOptions: {pattern: 'yyyy-MM-dd'}}"/>
                         </t:template>
                     </t:Column>
                     <t:Column>
